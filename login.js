@@ -2,7 +2,7 @@
 // Logic kiểm tra đăng nhập đơn giản
 
 function checkLogin(user, pass) {
-  if (user === 'admin' && pass === '1234') {
+  if (user === 'admin' && pass === '123') {
     return true;
   }
   return false;
