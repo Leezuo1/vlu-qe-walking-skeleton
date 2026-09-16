@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Form đăng nhập</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-card">
+    <h2>Đăng nhập</h2>
+    <form id="loginForm">
+      <div class="field">
+        <label for="username">Tên đăng nhập</label>
+        <input type="text" id="username" name="username" autocomplete="username">
+      </div>
+
+      <div class="field">
+        <label for="password">Mật khẩu</label>
+        <input type="password" id="password" name="password" autocomplete="current-password">
+      </div>
+
+      <button type="submit">Đăng nhập</button>
+    </form>
+
+    <p id="result"></p>
+  </div>
+
+  <script src="login.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      const ok = checkLogin(user, pass);
+      const result = document.getElementById('result');
+      result.textContent = ok ? 'Đăng nhập thành công!' : 'Sai tài khoản hoặc mật khẩu.';
+      result.className = ok ? 'success' : 'error';
+    });
+  </script>
+</body>
+</html>
+  
